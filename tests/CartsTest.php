@@ -167,7 +167,7 @@ final class CartsTest extends TestCase
         $data = json_decode($response->getBody()->getContents());
 
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertNull($data);
+        $this->assertEmpty($data);
     }
 
     public function testEmptyCart()
@@ -182,7 +182,7 @@ final class CartsTest extends TestCase
         $data = json_decode($response->getBody()->getContents());
 
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertNull($data);
+        $this->assertEmpty($data);
 
         // Check if cart is really empty
         $response = $client->get('/api/cart');
